@@ -10,10 +10,11 @@ class RocketsController < ApplicationController
 
   def create
     @rocket = Rocket.new(rocket_params)
-    @rocket.save
-
-    # no need for app/views/restaurants/create.html.erb
-    redirect_to rocket_path(@rocket)
+    if @rocket.save
+      redirect_to rockets_path
+    else
+      render: new
+    end
   end
 
   def show
@@ -23,13 +24,20 @@ class RocketsController < ApplicationController
   end
 
   def update
-    @rocket.update(rocket_params)
-    redirect_to rocket_path(@rocket)
+    if @rocket.update(rocket_params)
+      redirect_to rocket_path(@rocket)
+    else
+      render: new
+    end
   end
 
   def destroy
     @rocket.destroy
-    redirect_to rocket_path
+    if @rocket.destroy
+      redirect_to rockets_path
+    else
+      render: new
+    end
   end
 
   private
