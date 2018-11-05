@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources: rockets
   resources: users, only: [:show] do
     resources: bookings, except: [:edit, :update]
+    resources: renters, only: [:new, :create, :show]
+    resources: owners, only: [:new, :create, :show]
   end
 end
