@@ -4,7 +4,7 @@ class CreateRenters < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.string :country
-      t.referecnces :user
+      t.references :user
 
       t.timestamps
     end

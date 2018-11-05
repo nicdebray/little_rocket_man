@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_143006) do
+ActiveRecord::Schema.define(version: 2018_11_05_145640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,24 @@ ActiveRecord::Schema.define(version: 2018_11_05_143006) do
     t.datetime "updated_at", null: false
     t.index ["rocket_id"], name: "index_bookings_on_rocket_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.string "company"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_owners_on_user_id"
+  end
+
+  create_table "renters", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "country"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_renters_on_user_id"
   end
 
   create_table "rockets", force: :cascade do |t|
@@ -50,5 +68,6 @@ ActiveRecord::Schema.define(version: 2018_11_05_143006) do
 
   add_foreign_key "bookings", "rockets"
   add_foreign_key "bookings", "users"
+  add_foreign_key "owners", "users"
   add_foreign_key "rockets", "users"
 end
