@@ -1,4 +1,4 @@
 class Rocket < ApplicationRecord
   belongs_to :user
-  belongs_to :owner through: :user
+  has_many :bookings
 end
