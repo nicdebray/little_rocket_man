@@ -1,2 +1,9 @@
-<h1>Owners#new</h1>
-<p>Find me in app/views/owners/new.html.erb</p>
+<h1>Add a new owner</h1>
+
+<%= simple_form_for [@user, @owner] do |f| %>
+<%= f.input :company, label: "Your company" %>
+<%= f.button :submit %>
+<% end %>
+
+<%= link_to "Cancel", user_owner_path %>
+
