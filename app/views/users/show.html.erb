@@ -1,2 +1,38 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Welcome email <%= @current_user.email %></h1>
+<p>Please check your details below:</p>
+<ul>
+  <% if @user.renter %>
+    <li><p>This are your renter details:</p></li>
+    <li>First Name: <%= @user.renter.first_name %> | <%= link_to "Edit", edit_user_renter_path(@user) %> </li>
+    <li>Last name: <%= @user.renter.last_name %> | <%= link_to "Edit", edit_user_renter_path(@user) %> </li>
+    <li>Country: <%= @user.renter.country %> | <%= link_to "Edit", edit_user_renter_path(@user) %> </li>
+  <% else %>
+    <%= link_to "Create your renters profile", new_user_renter_path(@user) %>
+  <% end %>
+  <% if @user.owner %>
+    <li><p>This are your owner details:</p></li>
+    <li>Company: <%= @user.owner.company %> | <%= link_to "Edit", edit_user_owner_path(@user) %> </li>
+  <% else %>
+    <%= link_to "Create your owner profile", new_user_owner_path(@user) %>
+  <% end %>
+</ul>
+
+<h2>These are your future trips!</h2>
+<ul>
+  <% if @user.renter %>
+    <% if my_bookings > 0 %>
+      <li>
+        <%  @my_bookings.each do |booking| %>
+          <li><%=  booking.departure_date %></li>
+          <li><%= booking.rocket(@rocket_id) %></li>
+        <% end %>
+      </li>
+    <% else %>
+      <p>You have no trips</p>
+    <% end %>
+    <% else %>
+    <p>Please create a profile first!</p>
+  <% end %>
+  <h2>Ready to search for trips? Check out our rockets!</h2>
+  <%= link_to "Add a trip", rockets_path %>
+</ul>
