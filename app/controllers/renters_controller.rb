@@ -12,7 +12,7 @@ class RentersController < ApplicationController
     if @renter.save
       redirect_to user_path(@user)
     else
-      render: new
+      render :new
     end
   end
 
@@ -27,7 +27,7 @@ class RentersController < ApplicationController
     if @renter.update(renter_params)
       redirect_to user_path(@user)
     else
-      render: new
+      render :new
     end
   end
 

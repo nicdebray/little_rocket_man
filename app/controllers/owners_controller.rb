@@ -16,7 +16,7 @@ class OwnersController < ApplicationController
     if @owner.save
       redirect_to user_path(@user)
     else
-      render: new
+      render :new
     end
   end
 
@@ -27,7 +27,7 @@ class OwnersController < ApplicationController
     if @owner.update(owner_params)
       redirect_to user_path(@user)
     else
-      render: new
+      render :new
     end
   end
 

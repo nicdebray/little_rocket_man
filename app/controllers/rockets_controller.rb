@@ -13,7 +13,7 @@ class RocketsController < ApplicationController
     if @rocket.save
       redirect_to rockets_path
     else
-      render: new
+      render :new
     end
   end
 
@@ -27,7 +27,7 @@ class RocketsController < ApplicationController
     if @rocket.update(rocket_params)
       redirect_to rocket_path(@rocket)
     else
-      render: new
+      render :new
     end
   end
 
@@ -36,7 +36,7 @@ class RocketsController < ApplicationController
     if @rocket.destroy
       redirect_to rockets_path
     else
-      render: new
+      render :new
     end
   end
 
