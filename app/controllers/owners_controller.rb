@@ -12,7 +12,7 @@ class OwnersController < ApplicationController
 
   def create
     @owner = Owner.new(owner_params)
-    set_owner
+    @owner = current_user
     if @owner.save
       redirect_to user_path(@user)
     else
@@ -35,7 +35,6 @@ class OwnersController < ApplicationController
   private
   def set_owner
     @user = User.find(params[:user_id])
-    # @owner.user = @user
 
   end
 
