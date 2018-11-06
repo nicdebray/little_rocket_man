@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get :my_bookings
       get :my_rentings
     end
-    resources :renters, only: [:new, :create, :show]
-    resources :owners, only: [:new, :create, :show]
+    resources :renters, only: [:new, :create, :show, :edit, :update]
+    resources :owners, only: [:new, :create, :show, :edit, :update]
   end
 end
