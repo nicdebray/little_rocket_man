@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking
+  before_action :set_booking, only: [:show]
 
   def index
     @bookings = Booking.all
@@ -9,19 +9,17 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @rocket = Rocket.find(params[:rocket_id])
     @booking = Booking.new
   end
 
   def create
-    @user = User.find(params[:user_id])
     @rocket = Rocket.find(params[:rocket_id])
     @booking = Booking.new(booking_params)
-    @booking.user = @user
+    @booking.user = current_user
     @booking.rocket = @rocket
     if @booking.save
-      redirect_to user_bookings_path
+      redirect_to rocket_bookings_path
     else
       render :new
     end
@@ -29,18 +27,19 @@ class BookingsController < ApplicationController
 
   def destroy
     if @booking.destroy
-      redirect_to user_bookings_path
+      redirect_to rocket_bookings_path
     else
       render :new
     end
-
-    private
-    def set_booking
-      @booking = Booking.find(params[:id])
-    end
-
-    def booking_params
-      params.require(:booking).permit(:departure_date, :rocket_id, :user_id)
-    end
-
   end
+
+  private
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def booking_params
+    params.require(:booking).permit(:departure_date, :rocket_id, :user_id)
+  end
+
+end

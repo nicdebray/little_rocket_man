@@ -7,4 +7,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
+
+
+  def rentings
+    get all user rentings
+  end
+
+  def self.bookings(id)
+    joins(:bookings).where(id: id)
+  end
+
+
 end
