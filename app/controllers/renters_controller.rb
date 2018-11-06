@@ -3,12 +3,14 @@ class RentersController < ApplicationController
 
   def new
     @renter = Renter.new
+    @user = User.find(params[:user_id])
   end
 
   def create
     @renter = Renter.new(renter_params)
+    set_user
     if @renter.save
-      redirect_to renter_path(@renter)
+      redirect_to user_path(@user)
     else
       render: new
     end
@@ -21,14 +23,19 @@ class RentersController < ApplicationController
   end
 
   def update
+    set_user
     if @renter.update(renter_params)
-      redirect_to renter_path(@renter)
+      redirect_to user_path(@user)
     else
       render: new
     end
   end
 
   private
+  def set_user
+    @user = User.find(params[:user_id])
+    @renter.user = @user
+  end
 
   def set_renter
     @renter = Renter.find(params[:id])
