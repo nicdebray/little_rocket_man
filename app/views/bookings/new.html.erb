@@ -1,2 +1,7 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<h1>Book your rocket</h1>
+<p>Select your date</p>
+
+<%= simple_form_for [@rocket, @booking] do |f| %>
+<%= f.input :departure_date, label: "When do you want to leave" %>
+<%= f.button :submit %>
+<% end %>
