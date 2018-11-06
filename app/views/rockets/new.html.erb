@@ -1,2 +1,11 @@
-<h1>Rockets#new</h1>
-<p>Find me in app/views/rockets/new.html.erb</p>
+<h1>Add a new rocket</h1>
+
+<%= simple_form_for @rocket do |f| %>
+<%= f.input :rocket_type, label: "Your rocket type" %>
+<%= f.input :capacity, label: "Capacity" %>
+<%= f.input :price, label: "Price requested" %>
+<%= f.input :destination, label: "Destination" %>
+<%= f.button :submit %>
+<% end %>
+
+<%= link_to "See all", rockets_path %>

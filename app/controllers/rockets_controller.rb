@@ -10,6 +10,7 @@ class RocketsController < ApplicationController
 
   def create
     @rocket = Rocket.new(rocket_params)
+    @rocket.user = current_user
     if @rocket.save
       redirect_to rockets_path
     else
@@ -48,6 +49,6 @@ class RocketsController < ApplicationController
   def rocket_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:rocket).permit(:type, :capacity, :price, :destination, :user_id)
-    end
+    params.require(:rocket).permit(:rocket_type, :capacity, :price, :destination, :user_id)
+  end
 end
