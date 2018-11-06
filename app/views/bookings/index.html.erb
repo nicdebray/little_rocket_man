@@ -1,8 +1,11 @@
-<h1>All my bookings</h1>
+<h1>All bookings for <%= @rocket.rocket_type %> rocket </h1>
 
 <% @bookings.each do |booking| %>
 <ul>
   <li><%= booking.departure_date %></li>
+  <li><%= link_to "Delete", rocket_booking_path(@rocket.id, booking.id),
+  method: :delete,
+  data: { confirm: "Are you sure?"} %></li>
 </ul>
 <% end %>
 
