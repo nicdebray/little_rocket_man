@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def my_bookings
@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def my_rentings
+    @bookings = User.bookings()
   end
 
 end
