@@ -18,8 +18,8 @@ class BookingsController < ApplicationController
     @user = User.find(params[:user_id])
     @rocket = Rocket.find(params[:rocket_id])
     @booking = Booking.new(booking_params)
-    @booking.user = @booking
-    @booking.rocket= @booking
+    @booking.user = @user
+    @booking.rocket = @rocket
     if @booking.save
       redirect_to user_bookings_path
     else
