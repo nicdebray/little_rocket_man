@@ -3,6 +3,7 @@
 <% @rockets.each do |rocket| %>
 <ul>
   <li><%= link_to rocket.rocket_type, rocket_path(rocket) %></li>
+  <%= link_to "Book Now", new_rocket_booking_path(rocket) %>
   <li><%= link_to "Delete", rocket_path(rocket),
   method: :delete,
   data: { confirm: "Are you sure?"} %></li>

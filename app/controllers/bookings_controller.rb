@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show]
 
   def index
+    @rocket = Rocket.find(params[:rocket_id])
     @bookings = Booking.all
   end
 
@@ -26,6 +27,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
     if @booking.destroy
       redirect_to rocket_bookings_path
     else
