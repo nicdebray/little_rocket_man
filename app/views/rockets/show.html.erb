@@ -1,2 +1,14 @@
-<h1>Rockets#show</h1>
-<p>Find me in app/views/rockets/show.html.erb</p>
+<h1>My Rocket details</h1>
+
+
+<p><%= @rocket.rocket_type %></p>
+<p><%= @rocket.capacity %></p>
+<p><%= @rocket.destination %></p>
+<p><%= @rocket.price %></p>
+
+<%= link_to "See all", rockets_path %>
+<%= link_to "Create a new one", new_rocket_path %>
+<%= link_to "Delete", rocket_path,
+method: :delete,
+data: { confirm: "Are you sure?"} %>
+<%= link_to "Edit", edit_rocket_path %>

@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to user_bookings_path
     else
-      render: new
+      render :new
     end
   end
 
@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
     if @booking.destroy
       redirect_to user_bookings_path
     else
-      render: new
+      render :new
     end
 
     private

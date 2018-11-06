@@ -1,2 +1,12 @@
-<h1>Rockets#index</h1>
-<p>Find me in app/views/rockets/index.html.erb</p>
+<h1>All my rockets</h1>
+
+<% @rockets.each do |rocket| %>
+<ul>
+  <li><%= link_to rocket.rocket_type, rocket_path(rocket) %></li>
+  <li><%= link_to "Delete", rocket_path(rocket),
+  method: :delete,
+  data: { confirm: "Are you sure?"} %></li>
+</ul>
+<% end %>
+<p><%= link_to "Create a new one", new_rocket_path %></p>
+
