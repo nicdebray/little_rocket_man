@@ -8,14 +8,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
 
-
-  def rentings
-    get all user rentings
-  end
-
   def self.bookings(id)
     joins(:bookings).where(id: id)
   end
-
-
 end

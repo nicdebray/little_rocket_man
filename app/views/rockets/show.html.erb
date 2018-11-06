@@ -7,6 +7,7 @@
 <p><%= @rocket.price %></p>
 
 <%= link_to "See all", rockets_path %>
+<%= link_to "Book Now", new_rocket_booking_path(@rocket) %>
 <%= link_to "Create a new one", new_rocket_path %>
 <%= link_to "Delete", rocket_path,
 method: :delete,
