@@ -7,7 +7,7 @@ class RentersController < ApplicationController
 
   def create
     @renter = Renter.new(renter_params)
-    @renter = current_user
+    @renter.user = current_user
     if @renter.save
       redirect_to user_path(current_user)
     else
