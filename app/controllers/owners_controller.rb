@@ -6,13 +6,12 @@ class OwnersController < ApplicationController
 
   def new
     @owner = Owner.new
-    @user = User.find(params[:user_id])
-
+    @user = current_user
   end
 
   def create
     @owner = Owner.new(owner_params)
-    @owner = current_user
+    @owner.user = current_user
     if @owner.save
       redirect_to user_path(current_user)
     else
