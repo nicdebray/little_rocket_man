@@ -2,7 +2,8 @@ class Booking < ApplicationRecord
   belongs_to :rocket
   belongs_to :user
 
-  validates :departure_date, presence: true, departure_date_cannot_be_in_the_past
+  validates :departure_date, presence: true
+  validate :departure_date_cannot_be_in_the_past
 
   def departure_date_cannot_be_in_the_past
     errors.add(:departure_date, "can't be in the past") if
