@@ -10,6 +10,7 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
 <body>
+<<<<<<< HEAD
   <div class="navbar-wagon">
     <!-- Logo -->
     <a href="/" class="navbar-wagon-brand">
@@ -50,6 +51,12 @@
     <div class="footer-copyright">
     </div>
   </div>
+=======
+  <%= render 'components/navbar' %>
+  <%= yield %>
+
+  <%= render 'components/footer' %>
+>>>>>>> 6505ff52714f63b4c9c450a8731672b9c1842ff2
 
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>

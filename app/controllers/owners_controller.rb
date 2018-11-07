@@ -1,44 +1,40 @@
 class OwnersController < ApplicationController
-  before_action :set_owner
+
 
   def show
   end
 
   def new
     @owner = Owner.new
-    @user = User.find(params[:user_id])
-
+    @user = current_user
   end
 
   def create
     @owner = Owner.new(owner_params)
-    @owner = current_user
+    @owner.user = current_user
     if @owner.save
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
     else
       render :new
     end
   end
 
   def edit
+    @owner = current_user.owner
   end
 
   def update
-    set_owner
+    @owner = current_user.owner
     if @owner.update(owner_params)
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
     else
       render :new
     end
   end
 
   private
-  def set_owner
-    @user = User.find(params[:user_id])
-
-  end
 
   def owner_params
-    params.require(:owner).permit(:company)
+    params.require(:owner).permit(:company, :user_id)
   end
 end
