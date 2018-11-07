@@ -1,0 +1,26 @@
+<div class="navbar-wagon">
+    <!-- Logo -->
+    <a href="/" class="navbar-wagon-brand">
+      <img src="https://images.pexels.com/photos/355931/pexels-photo-355931.jpeg?cs=srgb&dl=aircraft-astronomy-cape-canaveral-355931.jpg&fm=jpg">
+    </a>
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Search Trip</a> -->
+      <%= link_to "All destinations", rockets_path, class: "navbar-wagon-link" %>
+      <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a> -->
+
+      <!-- Profile picture with dropdown list -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <img src="https://images.pexels.com/photos/41952/neil-armstrong-armstrong-astronaut-space-suit-41952.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li><%= link_to "Bookings", my_bookings_user_path(current_user) %></li>
+            <li><%= link_to "signout", destroy_user_session_path, method: :delete %> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
