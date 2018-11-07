@@ -6,7 +6,7 @@ class Booking < ApplicationRecord
 
   def departure_date_cannot_be_in_the_past
     errors.add(:departure_date, "can't be in the past") if
-    !departure_date.blank? and expiration_date < Date.today
+    !departure_date.blank? and departure_date < Date.today
   end
 
 
