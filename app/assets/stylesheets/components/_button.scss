@@ -1,0 +1,18 @@
+.button {
+  background-color: #ffffff;
+  border: solid 1px #f2dd83;
+  padding: 7px 21px;
+  border-radius: 23px;
+  color: #edd055;
+}
+
+.button:hover {
+  transition-duration: 0.2s, 0.5s;
+  transition-property: color, box-shadow;
+  color: #e8c834;
+  box-shadow: 1px 1px 7px #f6e9ae;
+}
+
+.button:focus {
+  color: #f0db7a;
+}

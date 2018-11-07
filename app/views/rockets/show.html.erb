@@ -1,15 +1,42 @@
-<h1>My Rocket details</h1>
-
-
-<p><%= @rocket.rocket_type %></p>
-<p><%= @rocket.capacity %></p>
-<p><%= @rocket.destination %></p>
-<p><%= @rocket.price %></p>
-
-<%= link_to "See all", rockets_path %>
-<%= link_to "Book Now", new_rocket_booking_path(@rocket) %>
-<%= link_to "Create a new one", new_rocket_path %>
-<%= link_to "Delete", rocket_path,
-method: :delete,
-data: { confirm: "Are you sure?"} %>
-<%= link_to "Edit", edit_rocket_path %>
+<div class="main-show-rocket">
+  <div class="top-show-rocket">
+    <div class="left-top-show-rocket">
+      <div class="title">
+        <h1>My Rocket details</h1>
+      </div>
+    </div>
+    <div class="right-top-show-rocket"></div>
+  </div>
+  <div class="content-container">
+    <div class="content-show-rocket">
+      <!-- <div class="row"> -->
+        <div class="img-show-rocket">
+          <%= image_tag "rocket-profile.jpg", class: "show-rocket" %>
+        </div>
+        <div class="description-show-rocket">
+          <div class="description-details-show-rocket">
+            <div class="nav-back">
+              <p><< </p> <%= link_to "See all", rockets_path %>
+            </div>
+            <p>Rocket type: <%= @rocket.rocket_type %></p>
+            <p>Capacity: <%= @rocket.capacity %> passengers</p>
+            <p>Destination: <%= @rocket.destination %></p>
+            <p>Price: €<%= @rocket.price %></p>
+          </div>
+          <div class="action-details-show-rocket">
+            <%= link_to "Book Now", new_rocket_booking_path(@rocket), class: "button" %>
+          </div>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="bottom-show-rocket">
+      <div class="left-bottom-show-rocket">
+        <%= link_to "Create a new one", new_rocket_path %>
+        <%= link_to "Delete", rocket_path,
+        method: :delete,
+        data: { confirm: "Are you sure?"} %>
+        <%= link_to "Edit", edit_rocket_path %>
+      </div>
+    </div>
+  </div>
