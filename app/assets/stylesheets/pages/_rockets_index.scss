@@ -29,12 +29,40 @@ a {
   text-align: right;
 }
 
-.card {
+.card-destination {
   background-color: #FFFFFF;
   border-radius: 5px;
   box-shadow: 0px 0px 7px #edecec;
   height: 225px;
-  width: 325px;
-  margin: 15px;
-  padding-top: 10px;
+}
+
+.card-title{
+  position: absolute;
+  font-size: 20px;
+  top: 13px;
+  left: 13px;
+}
+
+.card-trash {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  font-size: 12px;
+}
+
+.fa-trash:hover {
+  font-size: 14px;
+  color: red;
+}
+
+.card-description {
+  position: absolute;
+  bottom: 21px;
+  left: 13px;
+}
+
+.card-action {
+  position: absolute;
+  bottom: 13px;
+  right: 13px;
 }
