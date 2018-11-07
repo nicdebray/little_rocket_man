@@ -10,53 +10,12 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
 <body>
-<<<<<<< HEAD
-  <div class="navbar-wagon">
-    <!-- Logo -->
-    <a href="/" class="navbar-wagon-brand">
-      <img src="https://images.pexels.com/photos/355931/pexels-photo-355931.jpeg?cs=srgb&dl=aircraft-astronomy-cape-canaveral-355931.jpg&fm=jpg">
-    </a>
 
-    <!-- Right Navigation -->
-    <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Search Trip</a>
-      <a href="/rockets" class="navbar-wagon-item navbar-wagon-link">All destinations</a>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
-
-      <!-- Profile picture with dropdown list -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <img src="https://images.pexels.com/photos/41952/neil-armstrong-armstrong-astronaut-space-suit-41952.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Bookings</a></li>
-            <li>  <%= link_to "signout", destroy_user_session_path, method: :delete %> </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <%= yield %>
-  </div>
-  <div class="footer">
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <div class="footer-copyright">
-    </div>
-  </div>
-=======
   <%= render 'components/navbar' %>
   <%= yield %>
 
   <%= render 'components/footer' %>
->>>>>>> 6505ff52714f63b4c9c450a8731672b9c1842ff2
+
 
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
