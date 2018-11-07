@@ -10,12 +10,19 @@ h1 {
   height: 65px;
   display: flex;
   align-items: baseline;
-  padding-left: 20px;
-  padding-top: 5px;
+  justify-content: space-between;
+  padding: 5px 40px 0px 20px;
+  min-width: 1000px;
 }
 
 .left-top-show-rocket {
   display: flex;
+}
+
+.right-top-show-rocket {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
 }
 
 .nav-back {

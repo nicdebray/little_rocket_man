@@ -5,7 +5,13 @@
         <h1>My Rocket details</h1>
       </div>
     </div>
-    <div class="right-top-show-rocket"></div>
+    <div class="right-top-show-rocket">
+      <%= link_to "Create a new one", new_rocket_path %>
+      <%= link_to "Edit", edit_rocket_path %>
+      <%= link_to "Delete", rocket_path,
+      method: :delete,
+      data: { confirm: "Are you sure?"} %>
+    </div>
   </div>
   <div class="content-container">
     <div class="content-show-rocket">

@@ -4,6 +4,7 @@
   padding: 7px 21px;
   border-radius: 23px;
   color: #edd055;
+  text-decoration: none;
 }
 
 .button:hover {
@@ -11,6 +12,7 @@
   transition-property: color, box-shadow;
   color: #e8c834;
   box-shadow: 1px 1px 7px #f6e9ae;
+  text-decoration: none;
 }
 
 .button:focus {
