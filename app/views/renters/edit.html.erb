@@ -1,2 +1,10 @@
-<h1>Renter#edit</h1>
-<p>Find me in app/views/renter/edit.html.erb</p>
+<h1>Edit your renter's account</h1>
+
+<%= simple_form_for [@user, @renter] do |f| %>
+  <%= f.input :first_name, label: "Enter your first name" %>
+  <%= f.input :last_name, label: "Enter your last name" %>
+  <%= f.input :country, label: "Enter your country" %>
+  <%= f.button :submit %>
+<% end %>
+
+
