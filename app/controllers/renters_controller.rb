@@ -1,5 +1,4 @@
 class RentersController < ApplicationController
-  before_action :set_renter
 
   def new
     @renter = Renter.new
@@ -8,9 +7,9 @@ class RentersController < ApplicationController
 
   def create
     @renter = Renter.new(renter_params)
-    @renter.user = current_user
+    @renter = current_user
     if @renter.save
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -20,22 +19,19 @@ class RentersController < ApplicationController
   end
 
   def edit
+    @renter = current_user.renter
   end
 
   def update
-    set_renter
+    @renter = current_user.renter
     if @renter.update(renter_params)
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
     else
       render :new
     end
   end
 
   private
-
-  def set_renter
-    @user = User.find(params[:user_id])
-  end
 
   def renter_params
     params.require(:renter).permit(:first_name, :last_name, :country, :user_id)
