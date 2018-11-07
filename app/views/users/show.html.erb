@@ -9,6 +9,7 @@
   <% else %>
     <%= link_to "Create your renters profile", new_user_renter_path(@user) %>
   <% end %>
+
   <% if @user.owner %>
     <li><p>This are your owner details:</p></li>
     <li>Company: <%= @user.owner.company %> | <%= link_to "Edit", edit_user_owner_path(@user) %> </li>
@@ -19,10 +20,10 @@
 
 <h2>These are your future trips!</h2>
 <ul>
-  <% if @user.renter %>
-    <% if my_bookings > 0 %>
+  <% if @user.owner %>
+    <% if @bookings > 0 %>
       <li>
-        <%  @my_bookings.each do |booking| %>
+        <%  @bookings.each do |booking| %>
           <li><%=  booking.departure_date %></li>
           <li><%= booking.rocket(@rocket_id) %></li>
         <% end %>
