@@ -35,8 +35,6 @@
           <%= link_to "Edit", edit_user_owner_path(current_user), class: "button" %>
             <p>This are the bookings for your rockets:</p>
             <% @rentings.each do |renting| %>
-
-
               <ul>
                 <li><%= renting.departure_date %></li>
                 <li><%= renting.rocket.name %></li>

@@ -33,6 +33,5 @@ class BookingPolicy < ApplicationPolicy
     def profile?
       user.owner? || user.renter?
     end
-
   end
 end
