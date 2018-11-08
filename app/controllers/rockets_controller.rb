@@ -27,7 +27,6 @@ class RocketsController < ApplicationController
   end
 
   def show
-
   end
 
   def edit

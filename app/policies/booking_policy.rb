@@ -27,6 +27,7 @@ class BookingPolicy < ApplicationPolicy
     end
 
     private
+
     def user_creator?
       record.user == user
     end
@@ -35,4 +36,3 @@ class BookingPolicy < ApplicationPolicy
       user.owner? || user.renter?
     end
   end
-end

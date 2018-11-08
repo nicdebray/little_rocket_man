@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    authorize @user
   end
 
   def my_bookings
