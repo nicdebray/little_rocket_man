@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  skip_after_action :verify_authorized, only: [:show, :my_bookings, :my_rentings]
+
   def show
-    authorize @user
   end
 
   def my_bookings
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def my_rentings
-    @bookings = User.bookings()
+    @bookings = User.rockets(current_user)
   end
 
 end

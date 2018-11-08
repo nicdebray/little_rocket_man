@@ -20,10 +20,8 @@ class BookingPolicy < ApplicationPolicy
       profile?
     end
 
-    end
-
     def destroy?
-      user_renter?
+      user.renter?
     end
 
     private
@@ -36,3 +34,4 @@ class BookingPolicy < ApplicationPolicy
       user.owner? || user.renter?
     end
   end
+end
