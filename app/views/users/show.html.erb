@@ -1,21 +1,20 @@
-<h1>Welcome email <%= @current_user.email %></h1>
 <p>Please check your details below:</p>
 <ul>
-  <% if @user.renter %>
+  <% if current_user.renter? %>
     <li><p>This are your renter details:</p></li>
-    <li>First Name: <%= @user.renter.first_name %> | <%= link_to "Edit", edit_user_renter_path(@user) %> </li>
-    <li>Last name: <%= @user.renter.last_name %> | <%= link_to "Edit", edit_user_renter_path(@user) %> </li>
-    <li>Country: <%= @user.renter.country %> | <%= link_to "Edit", edit_user_renter_path(@user) %> </li>
+    <li>First Name: <%= current_user.renter.first_name %> | <%= link_to "Edit", edit_user_renter_path(current_user) %> </li>
+    <li>Last name: <%= current_user.renter.last_name %> | <%= link_to "Edit", edit_user_renter_path(current_user) %> </li>
+    <li>Country: <%= current_user.renter.country %> | <%= link_to "Edit", edit_user_renter_path(current_user) %> </li>
   <% else %>
-    <%= link_to "Create your renters profile", new_user_renter_path(@user) %>
+    <%= link_to "Create your renters profile", new_user_renter_path(current_user) %>
   <% end %>
 
-  <% if @user.owner %>
+  <% if current_user.owner? %>
     <li><p>This are your owner details:</p></li>
-    <li>Company: <%= @user.owner.company %> | <%= link_to "Edit", edit_user_owner_path(@user) %> </li>
+    <li>Company: <%= current_user.owner.company %> | <%= link_to "Edit", edit_user_owner_path(current_user) %> </li>
 
   <% else %>
-    <%= link_to "Create your owner profile", new_user_owner_path(@user) %>
+    <%= link_to "Create your owner profile", new_user_owner_path(current_user) %>
   <% end %>
 </ul>
 

@@ -12,6 +12,10 @@ class User < ApplicationRecord
     joins(:bookings).where(id: id)
   end
 
+  def self.rockets(id)
+    joins(:bookings).where(id: id)
+  end
+
   def owner?
     owner.present?
   end
