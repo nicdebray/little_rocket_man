@@ -10,23 +10,75 @@ a {
   min-height: 400px;
 }
 
-.container {
+.container-fluid {
   background-color: #FFFFFF;
   margin: 0px;
   width: 100%;
 }
 
 .top-index-rocket {
-  height: 65px;
-  padding: 5px 40px 0px 20px;
+  min-height: 75px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .left-top-index-rocket {
+  display: flex;
+  align-items: baseline;
+}
 
+@media screen and (max-width: 768px) {
+  .left-top-index-rocket {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .left-top-index-rocket {
+    padding: 10px 0px 20px 0px;
+    justify-content: center;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.icon-title {
+  padding-right: 15px;
+}
+
+.fa-user-astronaut {
+  color: #F74D37;
+}
+
+.title {
+  color: #F74D37;
 }
 
 .right-top-index-rocket {
   text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  .right-top-index-rocket {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .right-top-index-rocket {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .right-top-index-rocket {
+    padding-bottom: 40px;
+  }
 }
 
 .card-destination {
@@ -51,6 +103,7 @@ a {
 }
 
 .fa-trash:hover {
+  transition-duration: 0.2s, 0.5s;
   font-size: 14px;
   color: red;
 }
