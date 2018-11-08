@@ -6,6 +6,7 @@ gem 'cloudinary'
 gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'jquery-rails'
+gem 'pundit'
 gem 'turbolinks'
 
 gem 'bootsnap', require: false
