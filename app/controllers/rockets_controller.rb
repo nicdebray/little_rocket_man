@@ -58,6 +58,6 @@ class RocketsController < ApplicationController
   def rocket_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:rocket).permit(:name, :capacity, :price, :destination, :user_id)
+    params.require(:rocket).permit(:name, :capacity, :price, :destination, :user_id, :photo)
   end
 end

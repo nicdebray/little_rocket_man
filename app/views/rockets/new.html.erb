@@ -5,7 +5,8 @@
 <%= f.input :capacity, label: "Capacity" %>
 <%= f.input :price, label: "Price requested" %>
 <%= f.input :destination, label: "Destination" %>
-<%= f.input :image, as: :file, label: "Rocket image" %>
+<%= f.input :photo %>
+<%= f.input :photo_cache, as: :hidden %>
 <%= f.button :submit %>
 <% end %>
 
