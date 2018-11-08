@@ -1,35 +1,32 @@
-<div class="row push-footer">
-  <div class="col-md-12">
-    <div class="top-index-rocket">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8">
-          <div class="left-top-index-rocket">
-            <div class="title">
-              <h1>All destinations</h1>
+<div class="container">
+  <div class="row push-footer">
+    <div class="col-md-12">
+      <div class="top-index-rocket">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8">
+            <div class="left-top-index-rocket">
+              <div class="title">
+                <h1>All destinations</h1>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="right-top-index-rocket">
+              <%= link_to "Create a new one", new_rocket_path %>
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="right-top-index-rocket">
-            <%= link_to "Create a new one", new_rocket_path %>
-          </div>
-        </div>
       </div>
-    </div>
-    <div class="row">
-      <% @rockets.each do |rocket| %>
-      <div class="content-container">
-        <div class="card col-xs-12 col-sm-6 col-md-4">
-          <ul>
-            <li> Destination: <%= link_to rocket.destination, rocket_path(rocket) %></li>
-            <li><%= link_to rocket.name, rocket_path(rocket) %></li>
-            <li>
-              <%= link_to "Book Now", new_rocket_booking_path(rocket) %></li>
-              <li><i><%= link_to "", rocket_path(rocket),
-              method: :delete,
-              data: { confirm: "Are you sure?"}, class: "fas fa-trash" %></i></li>
-            </ul>
-          </div>
+      <div class="row">
+        <% @rockets.each do |rocket| %>
+        <div class="card-destination col-xs-12 col-sm-6 col-md-4">
+          <div class="card-title"><%= link_to rocket.destination.capitalize, rocket_path(rocket) %></div>
+          <div class="card-description"><%= link_to rocket.name.capitalize, rocket_path(rocket) %></div>
+
+          <div class="card-action button"> <%= link_to "Book Now", new_rocket_booking_path(rocket) %></div>
+          <div class="card-trash">  <i><%= link_to "", rocket_path(rocket),
+          method: :delete,
+          data: { confirm: "Are you sure?"}, class: "fas fa-trash" %></i></div>
         </div>
         <% end %>
       </div>
@@ -37,6 +34,5 @@
   </div>
   <div class="bottom-index-rocket">
   </div>
-
-
-
+</div>
+</div>
