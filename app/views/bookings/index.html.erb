@@ -1,11 +1,51 @@
-<h1>All bookings for <%= @rocket.name %> rocket </h1>
+<div class="container-fluid">
+  <div class="row push-footer">
+    <div class="col-md-12">
+      <div class="top-index-rocket">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8">
+            <div class="left-top-index-rocket">
+              <div class="title">
+                <h1>All bookings for <%= @rocket.name %> rocket</h1>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="right-top-index-rocket">
+              <%= link_to "Create a new one", new_rocket_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+       <% @rocket.bookings.each do |booking| %>
+       <div class="card-destination col-xs-12 col-sm-6 col-md-4">
+        <div class="card-title"><%= booking.departure_date %></div>
+        <div class="card-description"><%= link_to @rocket.name.capitalize, rocket_path(booking) %></div>
 
-<% @rocket.bookings.each do |booking| %>
-<ul>
-  <li><%= booking.departure_date %></li>
-  <li><%= link_to "Delete", rocket_booking_path(@rocket.id, booking.id),
-  method: :delete,
-  data: { confirm: "Are you sure?"} %></li>
-</ul>
-<% end %>
+        <div class="card-action button"> <%= link_to "Book Now", new_rocket_booking_path(booking) %></div>
+        <div class="card-trash">  <i><%= link_to "",rocket_booking_path(@rocket.id, booking.id), method: :delete,
+        data: { confirm: "Are you sure?"}, class: "fas fa-trash" %></i></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= link_to "Back to all rockets", rockets_path, class: "button" %>
+<div class="bottom-index-rocket">
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
