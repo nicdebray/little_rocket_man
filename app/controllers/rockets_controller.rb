@@ -5,7 +5,12 @@ class RocketsController < ApplicationController
   end
 
   def index
-    @rockets = Rocket.all
+    if params[:query].present?
+      sql_query = " rockets.name ILIKE :query OR rockets.destination ILIKE :query"
+      @rockets = Rocket.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @rockets = Rocket.all
+    end
   end
 
   def create
