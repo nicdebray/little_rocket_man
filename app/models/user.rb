@@ -11,4 +11,13 @@ class User < ApplicationRecord
   def self.bookings(id)
     joins(:bookings).where(id: id)
   end
+
+  def owner?
+    owner.present?
+  end
+
+  def renter?
+    renter.present?
+  end
+
 end

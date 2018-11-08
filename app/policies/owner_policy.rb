@@ -1,15 +1,15 @@
-class RenterPolicy < ApplicationPolicy
+class OwnerPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
 
     def new?
-      user.renter?
+      user.owner?
     end
 
     def create?
-      user.renter?
+      user.owner?
     end
 
     def show?

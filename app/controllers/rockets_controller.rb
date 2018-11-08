@@ -2,6 +2,7 @@ class RocketsController < ApplicationController
   before_action :set_rocket, only: [:show, :edit, :update, :destroy]
   def new
     @rocket = Rocket.new
+    authorize @rocket
   end
 
   def index
@@ -11,11 +12,13 @@ class RocketsController < ApplicationController
     else
       @rockets = Rocket.all
     end
+    policy_scope(@rockets).order(created_at: :desc)
   end
 
   def create
     @rocket = Rocket.new(rocket_params)
     @rocket.user = current_user
+    authorize @rocket
     if @rocket.save
       redirect_to rockets_path
     else
@@ -24,6 +27,7 @@ class RocketsController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
@@ -49,6 +53,7 @@ class RocketsController < ApplicationController
   private
   def set_rocket
     @rocket = Rocket.find(params[:id])
+    authorize @rocket
   end
 
   def rocket_params
