@@ -1,15 +1,8 @@
 class UsersController < ApplicationController
-  skip_after_action :verify_authorized, only: [:show, :my_bookings, :my_rentings]
+  skip_after_action :verify_authorized, only: [:show]
 
   def show
-  end
-
-  def my_bookings
-    @bookings = User.bookings(current_user)
-  end
-
-  def my_rentings
-    @bookings = User.rockets(current_user)
+   @rentings = Booking.rentings_for(current_user)
   end
 
 end
