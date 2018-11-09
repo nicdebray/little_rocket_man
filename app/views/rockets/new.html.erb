@@ -1,13 +1,39 @@
-<h1>Add a new rocket</h1>
-
-<%= simple_form_for @rocket do |f| %>
-<%= f.input :name, label: "Your Rocket name" %>
-<%= f.input :capacity, label: "Capacity" %>
-<%= f.input :price, label: "Price requested" %>
-<%= f.input :destination, label: "Destination" %>
-<%= f.input :photo %>
-<%= f.input :photo_cache, as: :hidden %>
-<%= f.button :submit %>
-<% end %>
-
-<%= link_to "See all", rockets_path %>
+<div class="container-fluid">
+  <div class="row push-footer">
+    <div class="col-md-12">
+      <div class="row top-index-rocket">
+        <div class="col-xs-12 col-sm-6">
+          <div class="left-top-index-rocket">
+            <div class="icon-title">
+              <i class="fas fa-user-astronaut"></i>
+            </div>
+            <div class="title">
+              <h1>Add a new rocket</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="right-top-index-rocket">
+            <div class="right-top-action"> </div>
+            <div class="right-top-action"> </div>
+            <div class="right-top-action"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mx-auto">
+      <div class="col-xs-12">
+        <div class="formulaire">
+          <%= simple_form_for @rocket do |f| %>
+          <%= f.input :name, label: "Your Rocket name" %>
+          <%= f.input :capacity, label: "Capacity" %>
+          <%= f.input :price, label: "Price requested" %>
+          <%= f.input :destination, label: "Destination" %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit, class: "button" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
