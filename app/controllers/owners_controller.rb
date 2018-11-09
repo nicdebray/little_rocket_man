@@ -8,7 +8,7 @@ class OwnersController < ApplicationController
   def new
     @owner = Owner.new
     @user = current_user
-    autorize @owner
+    authorize @owner
   end
 
   def create
