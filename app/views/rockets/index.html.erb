@@ -19,6 +19,10 @@
         </div>
       </div>
       <div class="row">
+        <% if @rockets.blank? %>
+        There's no such destination.
+        <%= link_to " Check all our available destinations", rockets_path %>
+        <% else %>
         <% @rockets.each do |rocket| %>
         <div class="card-block col-xs-12 col-sm-6 col-md-4">
           <div class="card-block-design">
@@ -32,6 +36,7 @@
             </div>
           </div>
         </div>
+        <% end %>
         <% end %>
       </div>
     </div>

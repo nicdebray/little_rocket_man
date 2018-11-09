@@ -1,11 +1,9 @@
 <div class="search-bar d-none d-sm-block">
 
   <%= form_tag rockets_path, method: :get, :class => "form-inline" do %>
-  <%= text_field_tag :query, params[:query],class: "form-control navbar-search-box", placeholder: "Search for a rocket" %>
+  <%= text_field_tag :query, params[:query], class: "form-control navbar-search-box", placeholder: "Search for a destination..." %>
   <%= button_tag(type: "submit", class: "btn btn-default navbar-search-button") do %>
-  <i class="fas fa-space-shuttle"></i>
+  <i class="fas fa-search"></i>
   <% end %>
-
   <% end %>
-
 </div>
