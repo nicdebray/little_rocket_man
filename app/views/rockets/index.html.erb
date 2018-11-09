@@ -25,8 +25,9 @@
         <% else %>
         <% @rockets.each do |rocket| %>
         <div class="card-block col-xs-12 col-sm-6 col-md-4">
+          <% if rocket.photo.blank? %>
           <div class="card-block-design">
-            <div class="card-img-bckgrd" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <div class="card-img-bckgrd" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url( <%= asset_path  'back_up_rocket_index.jpg' %>)">
               <div class="card-title"><%= link_to rocket.destination.capitalize, rocket_path(rocket) %></div>
               <div class="card-description"><%= link_to rocket.name.capitalize, rocket_path(rocket) %></div>
               <div class="card-action button"> <%= link_to "Book Now", new_rocket_booking_path(rocket) %></div>
@@ -35,6 +36,18 @@
               data: { confirm: "Are you sure?"}, class: "fas fa-trash" %></i></div>
             </div>
           </div>
+          <% else %>
+          <div class="card-block-design">
+            <div class="card-img-bckgrd" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= rocket.photo %>')">
+              <div class="card-title"><%= link_to rocket.destination.capitalize, rocket_path(rocket) %></div>
+              <div class="card-description"><%= link_to rocket.name.capitalize, rocket_path(rocket) %></div>
+              <div class="card-action button"> <%= link_to "Book Now", new_rocket_booking_path(rocket) %></div>
+              <div class="card-trash">  <i><%= link_to "", rocket_path(rocket),
+              method: :delete,
+              data: { confirm: "Are you sure?"}, class: "fas fa-trash" %></i></div>
+            </div>
+          </div>
+          <% end %>
         </div>
         <% end %>
         <% end %>
