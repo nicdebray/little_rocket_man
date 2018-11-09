@@ -14,7 +14,7 @@ class OwnersController < ApplicationController
   def create
     @owner = Owner.new(owner_params)
     @owner.user = current_user
-    autorize @owner
+    authorize @owner
     if @owner.save
       redirect_to user_path(current_user)
     else
