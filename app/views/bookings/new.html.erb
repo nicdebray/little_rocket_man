@@ -1,7 +1,35 @@
-<h1>Book your rocket: <%= @rocket.name %> </h1>
-<p>Select your date</p>
+<div class="container-fluid">
+  <div class="row push-footer">
+    <div class="col-md-12">
+      <div class="row top-index-rocket">
+        <div class="col-xs-12 col-sm-6">
+          <div class="left-top-index-rocket">
+            <div class="icon-title">
+              <i class="fas fa-user-astronaut"></i>
+            </div>
+            <div class="title">
+              <h1>Book your rocket: <%= @rocket.name %></h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="right-top-index-rocket">
+            <div class="right-top-action"> </div>
+            <div class="right-top-action"> </div>
+            <div class="right-top-action"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mx-auto">
+      <div class="col-xs-12">
+        <div class="formulaire">
+          <%= simple_form_for [@rocket, @booking] do |f| %>
+          <%= f.input :departure_date, label: "When do you want to leave" %>
+          <%= f.button :submit, class: "button" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%= simple_form_for [@rocket, @booking] do |f| %>
-<%= f.input :departure_date, label: "When do you want to leave" %>
-<%= f.button :submit %>
-<% end %>
