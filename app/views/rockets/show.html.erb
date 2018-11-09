@@ -23,31 +23,37 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="content-container">
-        <div class="content-show-rocket">
-          <div class="img-show-rocket">
-            <%= cl_image_tag @rocket.photo, class: "show-rocket" %>
+    <div class="row mx-auto">
+      <div class="col-xs-12 col-sm-6">
+        <div class="testing-image block">
+          <% if @rocket.photo.blank? %>
+          <div class="testing-image block" style="background-image: url( <%= asset_path  'back_up_kim_un_rocket.jpg' %>)">
           </div>
-          <div class="description-show-rocket">
-            <div class="description-details-show-rocket">
-              <div class="nav-back">
-                <p><< </p> <%= link_to "See all", rockets_path %>
-              </div>
-              <p>Rocket name: <%= @rocket.name %></p>
-              <p>Capacity: <%= @rocket.capacity %> passengers</p>
-              <p>Destination: <%= @rocket.destination %></p>
-              <p>Price: €<%= @rocket.price %></p>
+          <% else %>
+          <div class="testing-image block" style="background-image: url('<%= @rocket.photo %>')">
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="testing block">
+          <div class="description-details-show-rocket">
+            <div class="nav-back">
+              <p><< </p> <%= link_to "See all", rockets_path %>
             </div>
-            <div class="action-details-show-rocket">
-              <%= link_to "Book Now", new_rocket_booking_path(@rocket), class: "button" %>
-            </div>
+            <p>Rocket name: <%= @rocket.name %></p>
+            <p>Capacity: <%= @rocket.capacity %> passengers</p>
+            <p>Destination: <%= @rocket.destination %></p>
+            <p>Price: €<%= @rocket.price %></p>
+          </div>
+          <div class="action-details-show-rocket">
+            <%= link_to "Book Now", new_rocket_booking_path(@rocket), class: "button" %>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="bottom-index-rocket">
+</div>
 </div>
 </div>
