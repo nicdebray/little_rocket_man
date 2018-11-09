@@ -19,7 +19,7 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <% if user_signed_in? %>
           <li><%= link_to "Profile", user_path(current_user) %></li>
-          <li><%= link_to "Bookings", rocket_bookings_path(current_user) %></li>
+          <li><%= link_to "New Trip", rockets_path %></li>
           <li><%= link_to "signout", destroy_user_session_path, method: :delete %> </li>
           <% else %>
           <%= link_to "Sign in", new_user_session_path %>
