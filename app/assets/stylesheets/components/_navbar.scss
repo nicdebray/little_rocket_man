@@ -45,7 +45,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #F74D37;
   text-decoration: none;
 }
 
@@ -78,4 +78,23 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.navbar-search-box {
+  border-radius: 23px;
+  font-size: 16px;
+}
+
+.navbar-search-button {
+  padding-left: 4px;
+}
+
+.fa-space-shuttle {
+  color: #BAE6F5;
+  font-size: 30px;
+}
+
+.navbar-link {
+  padding: 0px 15px 0px 15px;
+  font-size: 18px;
 }

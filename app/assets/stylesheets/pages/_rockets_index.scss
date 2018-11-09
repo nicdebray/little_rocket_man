@@ -18,7 +18,6 @@ a {
 
 .top-index-rocket {
   min-height: 75px;
-  padding-left: 20px;
   display: flex;
   align-items: center;
 }
@@ -39,7 +38,7 @@ a {
 
 @media screen and (max-width: 615px) {
   .left-top-index-rocket {
-    padding: 10px 0px 20px 0px;
+    padding: 20px 0px 20px 0px;
     justify-content: center;
   }
   h1 {
@@ -77,45 +76,7 @@ a {
 
 @media screen and (max-width: 575px) {
   .right-top-index-rocket {
-    padding-bottom: 40px;
+    padding-bottom: 30px;
+    padding-top: 10px;
   }
-}
-
-.card-destination {
-  background-color: #FFFFFF;
-  border-radius: 5px;
-  box-shadow: 0px 0px 7px #edecec;
-  height: 225px;
-}
-
-.card-title{
-  position: absolute;
-  font-size: 20px;
-  top: 13px;
-  left: 13px;
-}
-
-.card-trash {
-  position: absolute;
-  top: 13px;
-  right: 13px;
-  font-size: 12px;
-}
-
-.fa-trash:hover {
-  transition-duration: 0.2s, 0.5s;
-  font-size: 14px;
-  color: red;
-}
-
-.card-description {
-  position: absolute;
-  bottom: 21px;
-  left: 13px;
-}
-
-.card-action {
-  position: absolute;
-  bottom: 13px;
-  right: 13px;
 }
