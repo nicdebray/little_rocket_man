@@ -10,7 +10,6 @@ class Booking < ApplicationRecord
     !departure_date.blank? and departure_date < Date.today
   end
 
-
   def self.rentings_for(user)
     joins(rocket: :user).where(users: { id: user })
   end

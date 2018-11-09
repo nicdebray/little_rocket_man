@@ -8,14 +8,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
 
-  def self.bookings(id)
-    joins(:bookings).where(id: id)
-  end
-
-  def self.rockets(id)
-    joins(:bookings).where(id: id)
-  end
-
   def owner?
     owner.present?
   end
