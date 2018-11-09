@@ -1,5 +1,5 @@
 class RocketsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_rocket, only: [:show, :edit, :update, :destroy]
   def new
     @rocket = Rocket.new
