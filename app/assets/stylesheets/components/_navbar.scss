@@ -87,14 +87,25 @@
 
 .navbar-search-button {
   padding-left: 4px;
+  background-color: #FFFFFF;
 }
 
-.fa-space-shuttle {
+.fa-search {
   color: #BAE6F5;
-  font-size: 30px;
+  font-size: 20px;
+  padding-left: 5px;
+  padding-right: 0px;
+}
+
+.form-control {
+  width: 275px!important;
 }
 
 .navbar-link {
-  padding: 0px 15px 0px 15px;
+  padding: 0px 0px 0px 10px;
   font-size: 18px;
+}
+
+.navbar-wagon-item {
+  padding-left: 10px;
 }
