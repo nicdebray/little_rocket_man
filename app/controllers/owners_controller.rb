@@ -1,5 +1,5 @@
 class OwnersController < ApplicationController
-
+  before_action :authenticate_user!
 
   def show
     authorize @owner
