@@ -1,43 +1,52 @@
-<div class="main-show-rocket">
-  <div class="top-show-rocket">
-    <div class="left-top-show-rocket">
-      <div class="title">
-        <h1>My Rocket details</h1>
-      </div>
-    </div>
-    <div class="right-top-show-rocket">
-      <%= link_to "Create a new one", new_rocket_path %>
-      <%= link_to "Edit", edit_rocket_path %>
-      <%= link_to "Delete", rocket_path,
-      method: :delete,
-      data: { confirm: "Are you sure?"} %>
-    </div>
-  </div>
-  <div class="content-container">
-    <div class="content-show-rocket">
-      <!-- <div class="row"> -->
-        <div class="img-show-rocket">
-          <%= cl_image_tag @rocket.photo, class: "show-rocket" %>
-        </div>
-        <div class="description-show-rocket">
-          <div class="description-details-show-rocket">
-            <div class="nav-back">
-              <p><< </p> <%= link_to "See all", rockets_path %>
+<div class="container-fluid">
+  <div class="row push-footer">
+    <div class="col-md-12">
+      <div class="row top-index-rocket">
+        <div class="col-xs-12 col-sm-6">
+          <div class="left-top-index-rocket">
+            <div class="icon-title">
+              <i class="fas fa-user-astronaut"></i>
             </div>
-            <p>Rocket name: <%= @rocket.name %></p>
-            <p>Capacity: <%= @rocket.capacity %> passengers</p>
-            <p>Destination: <%= @rocket.destination %></p>
-            <p>Price: €<%= @rocket.price %></p>
-          </div>
-          <div class="action-details-show-rocket">
-            <%= link_to "Book Now", new_rocket_booking_path(@rocket), class: "button" %>
+            <div class="title">
+              <h1>My Rocket</h1>
+            </div>
           </div>
         </div>
-        <!-- </div> -->
+        <div class="col-xs-12 col-sm-6">
+          <div class="right-top-index-rocket">
+            <%= link_to "Create a new one", new_rocket_path %>
+            <%= link_to "Edit", edit_rocket_path %>
+            <%= link_to "Delete", rocket_path,
+            method: :delete,
+            data: { confirm: "Are you sure?"} %>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="bottom-show-rocket">
-      <div class="left-bottom-show-rocket">
+      <div class="row">
+        <div class="content-container">
+          <div class="content-show-rocket">
+            <div class="img-show-rocket">
+              <%= cl_image_tag @rocket.photo, class: "show-rocket" %>
+            </div>
+            <div class="description-show-rocket">
+              <div class="description-details-show-rocket">
+                <div class="nav-back">
+                  <p><< </p> <%= link_to "See all", rockets_path %>
+                </div>
+                <p>Rocket name: <%= @rocket.name %></p>
+                <p>Capacity: <%= @rocket.capacity %> passengers</p>
+                <p>Destination: <%= @rocket.destination %></p>
+                <p>Price: €<%= @rocket.price %></p>
+              </div>
+              <div class="action-details-show-rocket">
+                <%= link_to "Book Now", new_rocket_booking_path(@rocket), class: "button" %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <div class="bottom-index-rocket">
+  </div>
+</div>
