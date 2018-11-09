@@ -31,6 +31,30 @@
   font-style: italic;
 }
 
-.btn {
+
+.business-card{
+  min-height:100px;
+  background-size: cover !important;
+  background-color: #FFFFFF;
+  //background-position: center;
+  color: #404041;
+  position: relative;
+  // border: 1px solid rgba(100,100,100,0.4);
+  box-shadow: 0px 0px 7px #edecec;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  text-align: center;
+  color: #404041;
+  //margin-top: 15px;
+}
+
+.container-fluid:hover {
+ cursor: url(http://cur.cursors-4u.net/mechanics/mec-1/mec5.cur), auto !important;
+}
+
+.navbar-wagon:hover {
  cursor: url(http://cur.cursors-4u.net/mechanics/mec-1/mec5.cur), auto !important;
 }
